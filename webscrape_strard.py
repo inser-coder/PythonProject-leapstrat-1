@@ -40,11 +40,13 @@ class StubHubSpider(scrapy.Spider):
                 date = event.find_element(By.XPATH, ".//p[contains(@class,'bsWxzg')][1]").text
 
                 place = event.find_element(By.XPATH, ".//p[contains(@class,'bsWxzg')][2]").text
-
+                image = event.find_element(By.XPATH, ".//img[contains(@class,'fpvUjg')]").get_attribute("src")
                 event_data = {
                     "name": name,
                     "date": date,
-                    "location": place
+                    "location": place,
+                    "image": image
+
                 }
 
                 self.sport_data.append(event_data)
