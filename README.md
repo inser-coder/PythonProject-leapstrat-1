@@ -1,9 +1,10 @@
-The python script is bascially made of scrapy with selenuim.
-i tried to write the programe scrapy with spider 
-Going before the writing the programe i check how the website structure is it dynamic or static.
-when i check website is dynamic it no longer where i can use scrapy with spider beacuse spider will crwal only on 
-basic static html content if the website is desgined with javascript and to load the data if it render with same spider will not help.
-beacuse of that i need to load the dynamic content, for loading dynamic content i need to get the selenuim webdriver into picture so ,i used the webdriver for that 
-once webdriver open the page in head or headles browser automatically java script also will be rendered.
-In page there total 48 events are live so i used a loop to grab the all events and convert into json .
+Before writing the program, I analyzed the website to determine whether it was static or dynamic.
+Since the website uses JavaScript to load data dynamically, Scrapy alone would not be effective. Scrapy's spider can only crawl basic static HTML content, and if a website renders content via JavaScript, Scrapy alone cannot extract that data.
+To overcome this, I integrated Selenium WebDriver. Selenium loads the dynamic content by opening the webpage in a browser (headless or with UI), ensuring that JavaScript executes and renders the necessary elements.
+Selenium WebDriver is used to open the page, allowing JavaScript to render all event details.
+Once the page loads completely, all live events become accessible.
+There are a total of 48 live events on the page, so I implemented a loop to capture all of them and convert them into JSON format.
+Initializes the Selenium WebDriver with Chrome in __init__ Method
+for loading the page i gave some time for 5 minutes, after rleative xpath has been written for each name ,location,phonenumber,image url
+after that i saved total output in json file
 
